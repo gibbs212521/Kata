@@ -1,7 +1,7 @@
 from os import system
 from unittest import TestCase
 
-class ChallengeTest(TestCase):
+class TestCSVScorer(TestCase):
     ''' '''
     def __init__(self):
         super().__init__()
