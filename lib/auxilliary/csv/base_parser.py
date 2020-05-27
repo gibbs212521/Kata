@@ -35,6 +35,7 @@ class BaseParser():
         if path.isdir(path_dir):
             return [filepath, path_dir]
         #   Check for landing error     #
+        print(path_list)
         if '.' not in path_dir[0] or ':' not in path_dir[0:3]:
             LandingChecks = ['.', '.' + self.path_separator] 
             for LandingCheck in LandingChecks:
