@@ -1,4 +1,4 @@
-from os import system
+from os import system, remove
 from unittest import TestCase
 
 class TestCSVScorer(TestCase):

@@ -2,23 +2,16 @@
 from sys import argv, path
 from os import path as os_path
 
+# TODO: Move libpath insertion to more prior location
 try:
     libpath = os_path.realpath(__file__ + './../../..')
-except Exception:
+except SyntaxError:
     libpath = os_path.realpath(__file__ + '.\\..\\..\\..')
-path.insert(0, libpath)
+path.insert(0, libpath) 
 
+### Internal modules
 from lib.auxilliary.csv.csv_scorer import CSVScorer
 
-### Kata for sorting names of top score contenders of a given .csv ###
-#
-#   input   :   .csv file with rows consisting of [NAME],[SURNAME],[SCORE]
-#   output  :   plain text file containing top score names
-#
-###
-
-
-    ### Retrieve and handle input and output filepaths  ###
 
 if len(argv) == 1:
     INPUT_PATH = None
@@ -35,7 +28,7 @@ else:
     ### Implement CSV Classes ###
 
 csv_scorer = CSVScorer(INPUT_PATH, OUTPUT_PATH, MAX_NAME_LENGTH)
-
+csv_scorer.getTopScorers()
 
 
 # Determine if system is Linux or Windows
